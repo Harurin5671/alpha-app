@@ -1,0 +1,1 @@
+export 'dependency_injection/get_it_adapter.dart';

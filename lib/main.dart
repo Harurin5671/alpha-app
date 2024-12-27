@@ -1,8 +1,10 @@
-import 'package:beta_app/configs/configs.dart';
 import 'package:flutter/material.dart';
+
+import 'package:beta_app/configs/configs.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  setupLocator();
   runApp(const MyApp());
 }
 
@@ -14,8 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Alfa App',
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
+      theme: AppTheme.buildLightTheme(context),
+      darkTheme: AppTheme.buildDarkTheme(context),
       themeMode: ThemeMode.system,
       routerConfig: appRouter,
     );
