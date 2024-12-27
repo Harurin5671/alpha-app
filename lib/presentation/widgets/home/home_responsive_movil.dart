@@ -20,7 +20,6 @@ class HomeResponsiveMovil extends StatelessWidget {
                   index: state.currentIndex,
                   children: const [
                     HomeTab(),
-                    // Center(child: Text("Contenido Buscar")),
                     ProfileTab(),
                   ],
                 );
@@ -41,10 +40,6 @@ class HomeResponsiveMovil extends StatelessWidget {
                     icon: Icon(Icons.home),
                     label: 'Inicio',
                   ),
-                  // BottomNavigationBarItem(
-                  //   icon: Icon(Icons.search),
-                  //   label: 'Buscar',
-                  // ),
                   BottomNavigationBarItem(
                     icon: Icon(Icons.account_circle_outlined),
                     label: 'Perfil',

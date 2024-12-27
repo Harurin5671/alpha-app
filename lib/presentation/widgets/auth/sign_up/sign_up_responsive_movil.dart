@@ -56,12 +56,6 @@ class SignUpResponsiveMovilView extends StatelessWidget {
                       context.read<RegisterBloc>().add(RegisterFullNameChangedEvent(value));
                     },
                   ),
-                  // TextFormField(
-                  //   decoration: InputDecoration(
-                  //     hintText: 'Colocar tu nombre completo',
-                  //     labelText: 'Nombre completo',
-                  //   ),
-                  // ),
                   const SizedBox(
                     height: 16,
                   ),
@@ -75,13 +69,6 @@ class SignUpResponsiveMovilView extends StatelessWidget {
                       context.read<RegisterBloc>().add(RegisterEmailChangedEvent(value));
                     },
                   ),
-                  // TextFormField(
-                  //   keyboardType: TextInputType.emailAddress,
-                  //   decoration: InputDecoration(
-                  //     hintText: 'Colocar tu correo electrónico',
-                  //     labelText: 'Correo electrónico',
-                  //   ),
-                  // ),
                   const SizedBox(
                     height: 16,
                   ),
@@ -104,33 +91,6 @@ class SignUpResponsiveMovilView extends StatelessWidget {
                     visibleIcon: Icons.visibility_outlined,
                     hiddenIcon: Icons.visibility_off_outlined,
                   ),
-                  // TextFormField(
-                  //   obscureText: true,
-                  //   decoration: InputDecoration(
-                  //     hintText: 'Colocar tu contraseña',
-                  //     labelText: 'Contraseña',
-                  //     suffixIcon: IconButton(
-                  //       onPressed: () {},
-                  //       icon: Icon(Icons.visibility_outlined),
-                  //     ),
-                  //     // suffixIconColor: Color(0xff7D8A95),
-                  //   ),
-                  // ),
-                  // const SizedBox(
-                  //   height: 16,
-                  // ),
-                  // TextFormField(
-                  //   obscureText: true,
-                  //   decoration: InputDecoration(
-                  //     hintText: 'Confirmar contraseña',
-                  //     labelText: 'Confirmar contraseña',
-                  //     suffixIcon: IconButton(
-                  //       onPressed: () {},
-                  //       icon: Icon(Icons.visibility_outlined),
-                  //     ),
-                  //     suffixIconColor: Color(0xffB2BCC9),
-                  //   ),
-                  // ),
                   const SizedBox(
                     height: 32,
                   ),

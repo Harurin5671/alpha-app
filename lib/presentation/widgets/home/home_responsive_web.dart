@@ -28,10 +28,6 @@ class _HomeResponsiveWebState extends State<HomeResponsiveWeb> {
               icon: Icon(Icons.home),
               label: Text("Inicio"),
             ),
-            // NavigationRailDestination(
-            //   icon: Icon(Icons.search),
-            //   label: Text("Buscar"),
-            // ),
             NavigationRailDestination(
               icon: Icon(Icons.account_circle_outlined),
               label: Text("Perfil"),
@@ -52,8 +48,6 @@ class _HomeResponsiveWebState extends State<HomeResponsiveWeb> {
         return const HomeTab();
       case 1:
         return const ProfileTab();
-      // case 2:
-      //   return const Center(child: Text("Contenido Ajustes"));
       default:
         return const Center(child: Text("Página no encontrada"));
     }
