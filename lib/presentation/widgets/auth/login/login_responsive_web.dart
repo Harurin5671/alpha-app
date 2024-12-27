@@ -34,7 +34,7 @@ class LoginResponsiveWebView extends StatelessWidget {
     bool isPasswordVisible =
         context.select((LoginBloc bloc) => bloc.state.isPasswordVisible);
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(40.0),
       child: Center(
         child: Container(
           decoration: BoxDecoration(
@@ -44,7 +44,7 @@ class LoginResponsiveWebView extends StatelessWidget {
             borderRadius: BorderRadius.circular(22),
           ),
           width: 500,
-          height: 500,
+          // height: 500,
           padding: const EdgeInsets.symmetric(
             horizontal: 20,
           ),
@@ -67,7 +67,7 @@ class LoginResponsiveWebView extends StatelessWidget {
                       errorText:
                           status == LoginStatus.success ? errorEmail : null,
                       onChanged: (value) {
-                        context.read<LoginBloc>().add(EmailChangedEvent(value));
+                        context.read<LoginBloc>().add(LoginEmailChangedEvent(value));
                       },
                     ),
                     const SizedBox(height: 22),
@@ -81,11 +81,11 @@ class LoginResponsiveWebView extends StatelessWidget {
                       onChanged: (value) {
                         context
                             .read<LoginBloc>()
-                            .add(PasswordChangedEvent(value));
+                            .add(LoginPasswordChangedEvent(value));
                       },
                       onPress: () {
                         context.read<LoginBloc>().add(
-                            TogglePasswordVisibleEvent(!isPasswordVisible));
+                            LoginTogglePasswordVisibleEvent(!isPasswordVisible));
                       },
                       visibleIcon: Icons.visibility_outlined,
                       hiddenIcon: Icons.visibility_off_outlined,
@@ -107,7 +107,7 @@ class LoginResponsiveWebView extends StatelessWidget {
                           : () {
                               context
                                   .read<LoginBloc>()
-                                  .add(FormSubmittedEvent());
+                                  .add(LoginFormSubmittedEvent());
                               // appRouter.goNamed(HomeScreen.name);
                             },
                       style: ElevatedButton.styleFrom(

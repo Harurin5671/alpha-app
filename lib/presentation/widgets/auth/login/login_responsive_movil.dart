@@ -56,10 +56,11 @@ class LoginResponsiveMovilView extends StatelessWidget {
                   BlocTextFormField(
                     labelText: 'Correo electrónico',
                     hintText: 'Coloca tu correo electrónico',
+                    keyboardType: TextInputType.emailAddress,
                     errorText:
                         status == LoginStatus.success ? errorEmail : null,
                     onChanged: (value) {
-                      context.read<LoginBloc>().add(EmailChangedEvent(value));
+                      context.read<LoginBloc>().add(LoginEmailChangedEvent(value));
                     },
                   ),
                   const SizedBox(
@@ -75,12 +76,12 @@ class LoginResponsiveMovilView extends StatelessWidget {
                     onChanged: (value) {
                       context
                           .read<LoginBloc>()
-                          .add(PasswordChangedEvent(value));
+                          .add(LoginPasswordChangedEvent(value));
                     },
                     onPress: () {
                       context
                           .read<LoginBloc>()
-                          .add(TogglePasswordVisibleEvent(!isPasswordVisible));
+                          .add(LoginTogglePasswordVisibleEvent(!isPasswordVisible));
                     },
                     visibleIcon: Icons.visibility_outlined,
                     hiddenIcon: Icons.visibility_off_outlined,
@@ -104,7 +105,7 @@ class LoginResponsiveMovilView extends StatelessWidget {
                     onPressed: status == LoginStatus.loading
                         ? null
                         : () {
-                            context.read<LoginBloc>().add(FormSubmittedEvent());
+                            context.read<LoginBloc>().add(LoginFormSubmittedEvent());
                             // appRouter.goNamed(HomeScreen.name);
                           },
                     child: Text(

@@ -9,12 +9,12 @@ part 'login_state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc() : super(LoginState()) {
-    on<EmailChangedEvent>(_onEmailChanged);
-    on<PasswordChangedEvent>(_onPasswordChanged);
-    on<TogglePasswordVisibleEvent>(_onTogglePasswordVisible);
-    on<FormSubmittedEvent>(_onFormSubmitted);
+    on<LoginEmailChangedEvent>(_onEmailChanged);
+    on<LoginPasswordChangedEvent>(_onPasswordChanged);
+    on<LoginTogglePasswordVisibleEvent>(_onTogglePasswordVisible);
+    on<LoginFormSubmittedEvent>(_onFormSubmitted);
   }
-  void _onEmailChanged(EmailChangedEvent event, Emitter<LoginState> emit) {
+  void _onEmailChanged(LoginEmailChangedEvent event, Emitter<LoginState> emit) {
     final newEmail = Email.dirty(event.email);
     emit(
       state.copyWith(
@@ -25,7 +25,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   }
 
   void _onPasswordChanged(
-      PasswordChangedEvent event, Emitter<LoginState> emit) {
+      LoginPasswordChangedEvent event, Emitter<LoginState> emit) {
     final newPassword = Password.dirty(event.password);
     emit(
       state.copyWith(
@@ -36,11 +36,11 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   }
 
   void _onTogglePasswordVisible(
-      TogglePasswordVisibleEvent event, Emitter<LoginState> emit) {
+      LoginTogglePasswordVisibleEvent event, Emitter<LoginState> emit) {
     emit(state.copyWith(isPasswordVisible: event.isPasswordVisible));
   }
 
-  void _onFormSubmitted(FormSubmittedEvent event, Emitter<LoginState> emit) async {
+  void _onFormSubmitted(LoginFormSubmittedEvent event, Emitter<LoginState> emit) async {
 
     try {
       _touchEveryField(emit);

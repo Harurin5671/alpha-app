@@ -10,7 +10,6 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PlatformLayout(
-      appBarHeight: kToolbarHeight,
       mobileContent: SignUpResponsiveMovil(),
       webContent: SignUpResponsiveWeb(),
     );
